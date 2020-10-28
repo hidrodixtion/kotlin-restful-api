@@ -1,0 +1,97 @@
+### CREATE PRODUCT
+
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "A010",
+  "name": "Macbook Pro 15",
+  "price": 30000000,
+  "quantity": 10
+}
+
+### CREATE PRODUCT INVALID
+
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "",
+  "name": "",
+  "price": 0,
+  "quantity": -1
+}
+
+### GET PRODUCT
+
+GET http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Accept: application/json
+
+### GET PRODUCT NOT FOUND
+
+GET http://localhost:8080/api/products/A002
+Accept: application/json
+
+### UPDATE PRODUCT
+
+PUT http://localhost:8080/api/products/A001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Macbook Pro 16",
+  "price": 35000000,
+  "quantity": 9
+}
+
+### UPDATE PRODUCT NOT FOUND
+
+PUT http://localhost:8080/api/products/A002
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Macbook Pro 16",
+  "price": 35000000,
+  "quantity": 9
+}
+
+### UPDATE PRODUCT INVALID BODY
+
+PUT http://localhost:8080/api/products/A001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Macbook Pro 16",
+  "price": 35000000,
+  "quantity": -1
+}
+
+### DELETE PRODUCT
+
+DELETE http://localhost:8080/api/products/A001
+Accept: application/json
+
+### DELETE PRODUCT NOT FOUND
+
+DELETE http://localhost:8080/api/products/NotFound
+Accept: application/json
+
+### LIST PRODUCT
+
+GET http://localhost:8080/api/products
+Accept: application/json
+
+### LIST PRODUCT WITH SIZE PARAM
+
+GET http://localhost:8080/api/products?size=3
+Accept: application/json
+
+### LIST PRODUCT WITH SIZE & PAGE PARAM
+
+GET http://localhost:8080/api/products?size=3&page=1
+Accept: application/json
