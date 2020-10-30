@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  kotlin-restful:
+    container_name: kotlin-restful
+    image: kotlin-restful:0.0.1
+    ports:
+      - 8080:8080
+    environment:
+      DB_USERNAME: admin
+      DB_PASSWORD: admin
+      DB_URL: jdbc:sqlite:mydb.sqlite

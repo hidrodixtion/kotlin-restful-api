@@ -2,6 +2,7 @@
 
 POST http://localhost:8080/api/products
 Content-Type: application/json
+X-Api-Key: SECRET
 Accept: application/json
 
 {
@@ -26,7 +27,7 @@ Accept: application/json
 
 ### GET PRODUCT
 
-GET http://localhost:8080/api/products/A001
+GET http://localhost:8080/api/products/A010
 X-Api-Key: SECRET
 Accept: application/json
 
